@@ -6,15 +6,16 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.util.Date;
 
 @Entity
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter
 @Setter
-@Table(name = "produto")
-public class Produto {
+@Table(name = "usuario")
 
+public class Usuario {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
@@ -23,18 +24,9 @@ public class Produto {
     private String nome;
 
     @Column(nullable = false)
-    private String descricao;
+    private String email;
 
     @Column(nullable = false)
-    private double preco;
-
-    @Column(nullable = false)
-    private int estoque;
-
-    @Column(nullable = false)
-    private String categoria;
-
-    @Column(nullable = false)
-    private String imagem_url;
+    private String cpf;
 
 }
