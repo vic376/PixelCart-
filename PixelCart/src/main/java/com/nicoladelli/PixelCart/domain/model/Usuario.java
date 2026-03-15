@@ -29,4 +29,10 @@ public class Usuario {
     @Column(nullable = false)
     private String cpf;
 
+    @Column(nullable = false)
+    private String senha;
+
+    @Column(nullable = false)
+    private String endereco;
+
 }

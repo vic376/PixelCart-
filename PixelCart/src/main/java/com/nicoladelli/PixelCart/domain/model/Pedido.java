@@ -21,10 +21,10 @@ public class Pedido {
     private Long id;
 
     @Column(nullable = false)
-    private Long cliente_nome;
+    private String numero_pedido;
 
     @Column(nullable = false)
-    private String usuario_id;
+    private Long usuario_id;
 
     @Column(nullable = false)
     private double total;
