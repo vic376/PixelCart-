@@ -6,7 +6,12 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.math.BigDecimal;
+import java.sql.Timestamp;
+import java.time.LocalDateTime;
+import java.util.Arrays;
 import java.util.Date;
+import java.util.List;
 
 @Entity
 @AllArgsConstructor
@@ -27,7 +32,7 @@ public class Pedido {
     private Long usuario_id;
 
     @Column(nullable = false)
-    private double total;
+    private BigDecimal total;
 
     @Column(nullable = false)
     private StatusPedido statusPedido;
@@ -39,7 +44,10 @@ public class Pedido {
     private String mpPaymentId;
 
     @Column(nullable = false)
-    private Date criacaoPedido;
+    private LocalDateTime criacaoPedido;
+
+    @OneToMany(mappedBy = "pedido", cascade = CascadeType.ALL)
+    private List<ItemPedido> itens;
 
 
 }

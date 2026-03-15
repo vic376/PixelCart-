@@ -1,4 +1,11 @@
 package com.nicoladelli.PixelCart.application.dto.response;
 
-public class UsuarioResponse {
+public record UsuarioResponse(
+
+        Long id,
+        String nome,
+        String email,
+        String cpf,
+        String endereco
+) {
 }

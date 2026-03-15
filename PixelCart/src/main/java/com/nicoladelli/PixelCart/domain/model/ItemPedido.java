@@ -7,6 +7,8 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.math.BigDecimal;
+
 @Entity
 @AllArgsConstructor
 @NoArgsConstructor
@@ -29,6 +31,15 @@ public class ItemPedido {
     private int quantidade;
 
     @Column(nullable = false)
-    private double preco_unit;
+    private BigDecimal preco_unit;
+
+    @ManyToOne
+    @JoinColumn(name = "pedido_id")
+    private Pedido pedido;
+
+    @ManyToOne
+    @JoinColumn(name = "produto_id")
+    private Produto produto;
+
 
 }
