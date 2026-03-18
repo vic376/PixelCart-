@@ -27,4 +27,5 @@ public record ProdutoRequest(
 
         String imagem_url
 ) {
+
 }

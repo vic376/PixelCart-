@@ -31,7 +31,7 @@ public class PedidoMapper {
 
     public static Pedido toModel (PedidoRequest dto){
         Pedido pedido = new Pedido();
-        pedido.setNumero_pedido(dto);
-
+        pedido.setMetodoPagamento(dto.metodoPagamento());
+        return pedido;
     }
 }
