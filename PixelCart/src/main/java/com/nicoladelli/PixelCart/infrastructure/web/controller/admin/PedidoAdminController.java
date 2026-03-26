@@ -1,9 +1,26 @@
 package com.nicoladelli.PixelCart.infrastructure.web.controller.admin;
 
+import com.nicoladelli.PixelCart.domain.model.Pedido;
+import com.nicoladelli.PixelCart.domain.model.Produto;
+import com.nicoladelli.PixelCart.domain.service.PedidoService;
+import lombok.RequiredArgsConstructor;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import java.util.List;
+@RestController
+@RequestMapping("/pedidos")
+@RequiredArgsConstructor
 public class PedidoAdminController {
 
-    //cadastrar pedido, listar pedidos todos,
+    private final PedidoService service;
+
+    @GetMapping
+    public List<Pedido> listarPedido (){
+        return service.listarPedidos();
+    }
+
 
 
 }
-//GET /api/admin/pedidos (todos)

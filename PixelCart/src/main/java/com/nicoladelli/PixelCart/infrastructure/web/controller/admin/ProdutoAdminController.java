@@ -6,6 +6,8 @@ import com.nicoladelli.PixelCart.domain.service.ProdutoService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/produtos")
 @RequiredArgsConstructor
@@ -17,16 +19,14 @@ public class ProdutoAdminController {
         return service.criarProduto(produto);
     }
 
-
     @DeleteMapping("/{id}")
     public void deletarProduto(@PathVariable Long id){
         service.deletarProduto(id);
     }
 
-    @PutMapping("/{id}")
-    public void editarProduto (@PathVariable ProdutoRequest dto){
-        return service.
+    @GetMapping
+    public List<Produto> listarProduto (){
+        return service.listarProduto();
     }
 
 }
-// POST, PUT, DELETE /api/admin/produtos

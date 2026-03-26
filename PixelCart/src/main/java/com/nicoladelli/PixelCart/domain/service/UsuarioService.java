@@ -1,5 +1,6 @@
 package com.nicoladelli.PixelCart.domain.service;
 
+import com.nicoladelli.PixelCart.application.dto.request.UsuarioRequest;
 import com.nicoladelli.PixelCart.domain.model.Usuario;
 import com.nicoladelli.PixelCart.infrastructure.repository.UsuarioRepository;
 import org.springframework.stereotype.Service;
@@ -20,4 +21,6 @@ public class UsuarioService {
     public void deletarUsuario (Long id){
          repository.deleteById(id);
     }
+
+//criar um update
 }
