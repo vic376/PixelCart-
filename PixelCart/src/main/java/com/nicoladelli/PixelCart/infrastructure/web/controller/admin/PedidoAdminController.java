@@ -15,6 +15,7 @@ import java.util.List;
 public class PedidoAdminController {
 
     private final PedidoService service;
+    //private final PedidoRepository repository
 
     @GetMapping
     public List<Pedido> listarPedido (){
