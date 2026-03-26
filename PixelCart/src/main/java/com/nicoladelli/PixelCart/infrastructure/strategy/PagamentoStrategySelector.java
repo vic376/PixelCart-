@@ -1,4 +1,4 @@
 package com.nicoladelli.PixelCart.infrastructure.strategy;
 
-public class PagamentoBoleto {
+public class PagamentoStrategySelector {
 }
