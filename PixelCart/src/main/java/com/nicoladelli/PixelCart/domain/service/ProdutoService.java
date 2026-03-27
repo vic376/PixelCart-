@@ -5,6 +5,7 @@ import com.nicoladelli.PixelCart.infrastructure.repository.ProdutoRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class ProdutoService {
@@ -30,4 +31,6 @@ public class ProdutoService {
     public List<Produto> buscarProdutoNome (String nome){
         return repository.findByNomeContainingIgnoreCase(nome);
     }
+
+
 }

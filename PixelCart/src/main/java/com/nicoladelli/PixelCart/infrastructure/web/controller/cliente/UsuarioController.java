@@ -16,10 +16,15 @@ public class UsuarioController {
     public Usuario criarUsuario (@RequestBody Usuario usuario){
         return service.criarUsuario(usuario);
     }
+
     @DeleteMapping("/{id}")
-    public void deletarUsuario(@PathVariable Long id){
-        service.deletarUsuario(id);
+    public void desativarUsuario(@PathVariable Long id){
+        service.desativarUsuario(id);
     }
 
+    @PutMapping("/{id}")
+    public Usuario atualizarUsuario(@PathVariable Long id, @RequestBody UsuarioRequest dto){
+        return service.atualizarUsuario(id, dto);
+    }
 
 }

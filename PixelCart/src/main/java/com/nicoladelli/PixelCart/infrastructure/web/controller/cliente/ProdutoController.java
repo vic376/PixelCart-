@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.List;
 import java.util.Optional;
 
 @RestController
@@ -17,10 +18,14 @@ public class ProdutoController {
 
     private final ProdutoService service;
 
-    @GetMapping("/{id}")
-    public Optional<Produto> buscarProduto(@PathVariable Long id) {
-        return service.listarPorId(id);
+    @GetMapping
+    public List<Produto> listarProduto(){
+        return service.listarProduto();
+    }
+
+    @GetMapping
+    public List<Produto> buscarProdutoNome(String nome){
+        return service.buscarProdutoNome(nome);
     }
 
 }
-//listarPorId
