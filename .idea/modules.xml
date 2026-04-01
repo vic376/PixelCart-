@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/PixelCart/PixelCart.iml" filepath="$PROJECT_DIR$/PixelCart/PixelCart.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/PixelCart.iml" filepath="$PROJECT_DIR$/.idea/PixelCart.iml" />
     </modules>
   </component>
 </project>

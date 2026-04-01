@@ -1,4 +1,5 @@
 package com.nicoladelli.PixelCart.infrastructure.strategy;
 
-public class PagamentoPixStrategy {
-}
+import lombok.Value;
+import org.springframework.stereotype.Component;
+
