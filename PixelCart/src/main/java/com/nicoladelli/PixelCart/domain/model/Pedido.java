@@ -1,5 +1,6 @@
 package com.nicoladelli.PixelCart.domain.model;
 
+import com.mercadopago.client.payment.PaymentPayerRequest;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -28,8 +29,9 @@ public class Pedido {
     @Column(nullable = false)
     private String numero_pedido;
 
-    @Column(nullable = false)
-    private Long usuario_id;
+    @ManyToOne
+    @JoinColumn(name = "usuario_id", nullable = false)
+    private Usuario usuario;
 
     @Column(nullable = false)
     private BigDecimal total;
@@ -48,6 +50,7 @@ public class Pedido {
 
     @OneToMany(mappedBy = "pedido", cascade = CascadeType.ALL)
     private List<ItemPedido> itens;
+
 
 
 }
