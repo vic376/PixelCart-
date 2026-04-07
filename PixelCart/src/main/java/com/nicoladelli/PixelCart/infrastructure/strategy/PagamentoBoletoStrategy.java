@@ -13,7 +13,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
 @Component
-public class PagamentoBoletoStrategy {
+public class PagamentoBoletoStrategy implements IPagamentoStrategy{
 
     @Value("${mercadopago.access-token}")
     private String accessToken;
@@ -36,14 +36,18 @@ public class PagamentoBoletoStrategy {
 
             return new PagamentoResponseDTO(
                     payment.getStatus(),
+                    String.valueOf(payment.getId()),
+                    null,
+                    null,
+                    payment.getTransactionDetails().getExternalResourceUrl(),
+                    payment.getTransactionDetails().getExternalResourceUrl(),
+                    "Boleto gerado com sucesso"
 
-            )
+            );
 
-        } catch (MPException e) {
-            throw new RuntimeException(e);
-        } catch (MPApiException e) {
-            throw new RuntimeException(e);
-        }
+        }catch (MPException | MPApiException e) {
+        throw new RuntimeException("Erro ao gerar boleto: " + e.getMessage());
+    }
 
     }
 }
