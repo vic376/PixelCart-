@@ -48,6 +48,9 @@ public class Pedido {
     @Column(nullable = false)
     private LocalDateTime criacaoPedido;
 
+    @Column(nullable = false)
+    private String cardToken;
+
     @OneToMany(mappedBy = "pedido", cascade = CascadeType.ALL)
     private List<ItemPedido> itens;
 

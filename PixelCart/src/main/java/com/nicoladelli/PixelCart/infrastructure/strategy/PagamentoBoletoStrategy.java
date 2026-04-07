@@ -12,6 +12,8 @@ import com.nicoladelli.PixelCart.domain.model.Pedido;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
+import java.util.Optional;
+
 @Component
 public class PagamentoBoletoStrategy implements IPagamentoStrategy{
 
@@ -19,7 +21,7 @@ public class PagamentoBoletoStrategy implements IPagamentoStrategy{
     private String accessToken;
 
     @Override
-    public PagamentoResponseDTO processar (Pedido pedido){
+    public PagamentoResponseDTO processar (Optional<Pedido> pedido){
         MercadoPagoConfig.setAccessToken(accessToken);
 
         PaymentCreateRequest request = PaymentCreateRequest.builder()

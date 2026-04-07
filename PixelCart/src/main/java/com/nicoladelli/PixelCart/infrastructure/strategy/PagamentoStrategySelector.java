@@ -10,10 +10,10 @@ public class PagamentoStrategySelector {
 
     private final Map<MetodoPagamento, IPagamentoStrategy> strategies;
 
-    public PagamentoStrategySelector(PagamentoPixStrategy pix, PagamentoCartaoStrategy cartao, PagamentoBoleto boleto) {
+    public PagamentoStrategySelector(
+            PagamentoPixStrategy pix, PagamentoBoletoStrategy boleto) {
         strategies = Map.of(
                 MetodoPagamento.PIX, pix,
-                MetodoPagamento.CARTAO, cartao,
                 MetodoPagamento.BOLETO, boleto
         );
     }
