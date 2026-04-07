@@ -13,7 +13,7 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
-@RequestMapping("/pedidos")
+@RequestMapping("/admin/pedidos")
 @RequiredArgsConstructor
 public class PedidoAdminController {
 

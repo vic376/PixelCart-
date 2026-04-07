@@ -21,11 +21,11 @@ public class ItemPedido {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    @Column(nullable = false)
-    private Long pedido_id;
+    /*@Column(nullable = false)
+    private Long pedido_id;*/
 
-    @Column(nullable = false)
-    private Long produto_id;
+   /* @Column(nullable = false)
+    private Long produto_id;*/
 
     @Column(nullable = false)
     private int quantidade;

@@ -21,7 +21,7 @@ public class PagamentoPixStrategy implements IPagamentoStrategy{
     private String accessToken;
 
     @Override
-    public PagamentoResponseDTO processar(Optional<Pedido> pedido){
+    public PagamentoResponseDTO processar(Pedido pedido){
         MercadoPagoConfig.setAccessToken(accessToken);
 
         PaymentCreateRequest request = PaymentCreateRequest.builder()
