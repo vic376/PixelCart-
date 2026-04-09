@@ -35,6 +35,7 @@ public class Usuario {
     @Column(nullable = false)
     private String endereco;
 
+    @Enumerated(EnumType.STRING)
     @Column(nullable = false)
     private Role role;
 
